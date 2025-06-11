@@ -1,5 +1,42 @@
 package Model;
 
-public class LinkedList {
+public class LinkedList<T> {
+    private Node<T> head;
+    private int size;
+
+    public void appendToTail(T value){
+        Node<T> newNode = new Node<>(value);
+        if (head == null){
+            head = newNode;
+        }else{
+            Node<T> current = head;
+            while (current.getNext() != null) {
+                current = current.getNext();
+            }
+            current.setNext(newNode);
+        }
+        size++;
+
+    }
+    
+    public T findByValue(T value){
+        Node<T> current = head;
+        while (current != null) {
+            if (current.getValue().equals(value)) {
+                return current.getValue();
+            }
+            current = current.getNext();
+        }
+        return null;
+    }
+
+    public T deleteByValue(T value){
+        Node<T> current = head;
+        Node<T> previos = null;
+
+        while (current !=) {
+            
+        }
+    }
     
 }
