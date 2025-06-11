@@ -34,8 +34,27 @@ public class LinkedList<T> {
         Node<T> current = head;
         Node<T> previos = null;
 
-        while (current !=) {
-            
+        while (current !=null) {
+            if (current.getValue().equals(value)) {
+                if (previos == null) {
+                    head = current.getNext();
+                }else{
+                    previos.setNext(current.getNext());
+                }
+                size--;
+                return current.getValue();
+            }
+            previos = current;
+            current = current.getNext();
+
+        }
+    }
+
+    public void print(){
+        Node<T> current = head;
+        while (current != null) {
+            System.out.println(current.getValue());
+            current = current.getNext();
         }
     }
     
